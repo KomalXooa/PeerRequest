@@ -2,7 +2,7 @@ imports:
 - path: vm_template.jinja
 
 resources:
-- name: ExternalVm
+- name: externalvm
   type: vm_template.jinja
   properties:
     zone: us-central1-a
