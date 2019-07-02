@@ -1,13 +1,14 @@
 imports:
-- path: vm_template.jinja
+- path: externalpeer.jinja
 
 resources:
 - name: externalvm
-  type: vm_template.jinja
+  type: externalpeer.jinja
   properties:
     zone: us-central1-a
     startup-script: |
       #!/bin/bash
       sudo wget https://raw.githubusercontent.com/KomalXooa/PeerRequest/master/peersetup.sh
       sudo chmod a+x /peersetup.sh
+      
       
