@@ -14,7 +14,7 @@ sudo apt install jq -y
 curl  --header "Authorization: Bearer $1" --header "Content-Type: application/json"  --header "Accept: application/json" -X POST http://1f64b534.ngrok.io/download-peer | jq -r '.data' | base64 --decode > ./xooa-peer.zip
 
 # Extract peer zip and then run it
-apt-get install -y unzip
-unzip xooa-peer.zip -d xooa-peer -o
+sudo apt install -y unzip
+sudo unzip xooa-peer.zip -d xooa-peer -o
 cd xooa-peer
-docker-compose up -d
+sudo docker-compose up -d
