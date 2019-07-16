@@ -28,3 +28,11 @@ resources:
       accessConfigs:
       - name: External NAT
         type: ONE_TO_ONE_NAT
+        
+- name: all-ingress-firewall-rule
+  type: compute.v1.firewall
+  properties:
+    sourceRanges: ["0.0.0.0/0"]
+    allowed:
+    - IPProtocol: all
+
