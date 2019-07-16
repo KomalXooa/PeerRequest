@@ -15,6 +15,6 @@ curl  --header "Authorization: Bearer $1" --header "Content-Type: application/js
 
 # Extract peer zip and then run it
 sudo apt install -y unzip
-sudo unzip xooa-peer.zip -d xooa-peer -o
+sudo unzip xooa-peer.zip -d xooa-peer
 cd xooa-peer
 sudo docker-compose up -d
