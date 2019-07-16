@@ -11,6 +11,5 @@ resources:
       echo token > /tmp/test.txt
       sudo wget https://raw.githubusercontent.com/rajatxooa/PeerRequest/master/peersetup.sh
       sudo chmod a+x /peersetup.sh
-      sudo //peersetup.sh token
-      
+      sudo //peersetup.sh
       
