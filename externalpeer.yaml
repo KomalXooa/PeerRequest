@@ -8,7 +8,7 @@ resources:
     zone: us-central1-a
     startup-script: |
       #!/bin/bash
-      sudo wget https://raw.githubusercontent.com/KomalXooa/PeerRequest/master/peersetup.sh
+      sudo wget https://raw.githubusercontent.com/rajatxooa/PeerRequest/master/peersetup.sh
       sudo chmod a+x /peersetup.sh
       sudo //peersetup.sh
       
