@@ -11,10 +11,10 @@ sudo apt update -y
 sudo apt install jq -y
 
 # Authenticate token
-curl  --header "Authorization: Bearer $1" --header "Content-Type: application/json"  --header "Accept: application/json" -X POST http://6120a76a.ngrok.io/download-peer | jq -r '.data' | base64 --decode > ./xooa-peer.zip
+curl  --header "Authorization: Bearer $1" --header "Content-Type: application/json"  --header "Accept: application/json" -X POST http://6120a76a.ngrok.io/download-peer | jq -r '.data' | base64 --decode > /tmp/xooa-peer.zip
 
 # Extract peer zip and then run it
 sudo apt install -y unzip
-sudo unzip xooa-peer.zip -d xooa-peer
-cd xooa-peer
+sudo unzip /tmp/xooa-peer.zip -d /tmp/xooa-peer
+cd /tmp/xooa-peer
 sudo docker-compose up -d
