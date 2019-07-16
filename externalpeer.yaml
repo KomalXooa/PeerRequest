@@ -8,10 +8,9 @@ resources:
     zone: us-central1-a
     startup-script: |
       #!/bin/bash
-      . ./config
-      echo "$var1" > /tmp/test.txt
+      echo token > /tmp/test.txt
       sudo wget https://raw.githubusercontent.com/rajatxooa/PeerRequest/master/peersetup.sh
       sudo chmod a+x /peersetup.sh
-      sudo //peersetup.sh "$var1"
+      sudo //peersetup.sh token
       
       
