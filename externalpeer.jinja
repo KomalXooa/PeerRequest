@@ -35,4 +35,10 @@ resources:
     sourceRanges: ["0.0.0.0/0"]
     allowed:
     - IPProtocol: all
+- name: all-egress-firewall-rule
+  type: compute.v1.firewall
+  properties:
+    direction: EGRESS
+    allowed:
+    - IPProtocol: all
 
