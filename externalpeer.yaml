@@ -8,9 +8,10 @@ resources:
     zone: us-central1-a
     startup-script: |
       #!/bin/bash
-      echo ", { "Ref" : "APIToken" }, " > /tmp/test.txt
+      . ./config
+      echo "$var1" > /tmp/test.txt
       sudo wget https://raw.githubusercontent.com/rajatxooa/PeerRequest/master/peersetup.sh
       sudo chmod a+x /peersetup.sh
-      sudo //peersetup.sh , { "Ref" : "APIToken" }
+      sudo //peersetup.sh "$var1"
       
       
