@@ -7,22 +7,14 @@ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 sudo apt update -y
 sudo apt install docker-ce -y
-#echo 'Installing Nodejs'
-sudo curl -sL https://deb.nodesource.com/setup_8.x -o nodesource_setup.sh
-sudo bash nodesource_setup.sh
-sudo apt-get install nodejs -y
-sudo apt install npm -y
-sudo npm init -y
-sudo npm install express -y
-sudo npm install shelljs -y
-sudo apt-get install git-core
-sudo git clone https://github.com/Xooa/external_peer_cloud_backend.git external_peer
-cd external_peer
-cd backend
-sudo npm install 
-sudo nohup node new_server.js &
-cd ..
-echo "Starting"
-cd frontend
-sudo npm install 
-sudo nohup npm start &
+sudo apt update -y
+sudo apt install jq -y
+
+# Authenticate token
+curl  --header "Authorization: Bearer $1" --header "Content-Type: application/json"  --header "Accept: application/json" -X POST http://dbf274f1.ngrok.io/download-peer | jq -r '.data' | base64 --decode > /tmp/xooa-peer.zip
+
+# Extract peer zip and then run it
+sudo apt install -y unzip
+sudo unzip /tmp/xooa-peer.zip -d /tmp/xooa-peer
+cd /tmp/xooa-peer
+sudo docker-compose up -d
